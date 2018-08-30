@@ -9,17 +9,26 @@ const assignReducers = (reducer, reducers = {}) => {
 
   return (state, action) => {
     const rootState = reducer(state, action);
+    let hasChanged = rootState !== state;
     const childState = Object.keys(reducers)
-      .map((key) => ({
-        key,
-        value: reducers[key](rootState[key], action)
-      }))
+      .map((key) => {
+        const nextState = reducers[key](rootState[key], action);
+        hasChanged = hasChanged || state[key] !== nextState;
+        return {
+          key,
+          nextState
+        };
+      })
       .reduce((state, reducer) => {
-        state[reducer.key] = reducer.value;
+        state[reducer.key] = reducer.nextState;
         return state;
       }, {});
 
-    return Object.assign(rootState, childState);
+    if (hasChanged) {
+      return Object.assign(rootState, childState);
+    }
+
+    return state;
   };
 };
 
