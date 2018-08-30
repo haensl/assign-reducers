@@ -1,0 +1,45 @@
+{
+  "name": "assign-reducers",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">= 8.11.4"
+  },
+  "description": "Assign redux reducers analogous to Object.assign.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "tdd": "jest --watch",
+    "lint": "eslint -c .eslintrc.json **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haensl/assign-reducers.git"
+  },
+  "keywords": [
+    "Redux",
+    "Reducers",
+    "Reducer",
+    "Assign",
+    "Object",
+    "Object.assign"
+  ],
+  "author": {
+    "name": "Hans-Peter Dietz",
+    "url": "https://hpdietz.com",
+    "twitter": "@h_p_d",
+    "email": "h.p.dietz@gmailcom"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haensl/assign-reducers/issues"
+  },
+  "homepage": "https://github.com/haensl/assign-reducers#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.4.0",
+    "jest": "^23.5.0",
+    "regenerator-runtime": "^0.12.1"
+  }
+}
