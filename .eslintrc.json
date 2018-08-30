@@ -26,5 +26,8 @@
       "error",
       "always"
     ]
+  },
+  "globals": {
+    "define": true
   }
 }
