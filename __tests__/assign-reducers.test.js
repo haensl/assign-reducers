@@ -61,7 +61,7 @@ describe('assignReducers()', () => {
       const state = {
         value: 1
       };
-      
+
       expect(assignedReducer(state, {})).toEqual({
         value: 1,
         test: {
