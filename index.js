@@ -1,4 +1,4 @@
-export const assignReducers = (reducer, reducers = {}) => {
+const assignReducers = (reducer, reducers = {}) => {
   if (typeof reducer !== 'function') {
     throw new TypeError('Invalid parameter, expected reducer function!');
   }
@@ -23,5 +23,11 @@ export const assignReducers = (reducer, reducers = {}) => {
   };
 };
 
-export default assignReducers;
+if (typeof exports === 'object' && typeof module !== 'undefined') {
+  module.exports = assignReducers;
+} else if (typeof define === 'function' && define.amd) {
+  define(['exports'], (exports) => exports.assignReducers = assignReducers);
+} else if (!global.assignReducers) {
+  global.assignReducers = assignReducers;
+}
 
