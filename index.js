@@ -26,7 +26,7 @@ const assignReducers = (reducer, reducers = {}) => {
 if (typeof exports === 'object' && typeof module !== 'undefined') {
   module.exports = assignReducers;
 } else if (typeof define === 'function' && define.amd) {
-  define(['exports'], assignReducers);
+  define(['exports'], (exports) => exports.assignReducers = assignReducers);
 } else if (!global.assignReducers) {
   global.assignReducers = assignReducers;
 }
