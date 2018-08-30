@@ -25,7 +25,7 @@ const assignReducers = (reducer, reducers = {}) => {
       }, {});
 
     if (hasChanged) {
-      return Object.assign(rootState, childState);
+      return Object.assign({}, rootState, childState);
     }
 
     return state;

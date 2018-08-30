@@ -70,4 +70,79 @@ describe('assignReducers()', () => {
       });
     });
   });
+
+  describe('change detection', () => {
+    let reducer;
+    let reducers;
+    let assignedReducer;
+    beforeEach(() => {
+      const reducer = (state = { value: 1 }, action) => {
+        switch (action.type) {
+          case 'doStuff':
+            return {
+              ...state,
+              value: state.value + 1
+            };
+          default:
+            return state;
+        }
+      };
+      const reducers = {
+        test: (state = { foo: 'bar' }, action) => {
+          switch (action.type) {
+            case 'doChildStuff':
+              return {
+                ...state,
+                foo: 'baz'
+              };
+            default:
+              return state;
+          }
+        }
+      };
+      assignedReducer = assignReducers(reducer, reducers);
+    });
+
+    describe('when there are no changes in the state', () => {
+      let original;
+      let next;
+
+      beforeEach(() => {
+        original = assignedReducer(undefined, { type: 'INIT' });
+        next = assignedReducer(undefined, { type: 'INIT' });
+      });
+
+      it('returns the original state', () => {
+        expect(original).toEqual(next);
+      });
+    });
+
+    describe('when there are changes in the root state', () => {
+      let original;
+      let next;
+
+      beforeEach(() => {
+        original = assignedReducer(undefined, { type: 'INIT' });
+        next = assignedReducer(original, { type: 'doStuff' });
+      });
+
+      it('returns a new state', () => {
+        expect(original).not.toEqual(next);
+      });
+    });
+
+    describe('when there are changes in the child state', () => {
+      let original;
+      let next;
+
+      beforeEach(() => {
+        original = assignedReducer(undefined, { type: 'INIT' });
+        next = assignedReducer(original, { type: 'doChildStuff' });
+      });
+
+      it('returns a new state', () => {
+        expect(original).not.toEqual(next);
+      });
+    });
+  });
 });
