@@ -15,21 +15,21 @@ describe('assignReducers()', () => {
 
   describe('called without object as second parameter', () => {
     it('throws', () => {
-      expect(assignReducers.bind(null, (state, action) => state, null)).toThrow();
+      expect(assignReducers.bind(null, (state) => state, null)).toThrow();
     });
 
     it('throws', () => {
-      expect(assignReducers.bind(null, (state, action) => state, 2)).toThrow();
+      expect(assignReducers.bind(null, (state) => state, 2)).toThrow();
     });
   });
 
   describe('called with a reducer and an empty object', () => {
     it('returns a function', () => {
-      expect(typeof assignReducers.bind(null, (state, action) => state, {})).toEqual('function');
+      expect(typeof assignReducers.bind(null, (state) => state, {})).toEqual('function');
     });
 
     it('returns a reducer', () => {
-      const reducer = assignReducers((state, action) => state, {});
+      const reducer = assignReducers((state) => state, {});
       const state = {
         value: 1
       };
@@ -42,10 +42,11 @@ describe('assignReducers()', () => {
     let reducer;
     let reducers;
     let assignedReducer;
+
     beforeEach(() => {
-      const reducer = (state, action) => state;
-      const reducers = {
-        test: (state, action) => ({
+      reducer = (state) => state;
+      reducers = {
+        test: (state) => ({
           ...state,
           foo: 'bar'
         })
@@ -76,7 +77,7 @@ describe('assignReducers()', () => {
     let reducers;
     let assignedReducer;
     beforeEach(() => {
-      const reducer = (state = { value: 1 }, action) => {
+      reducer = (state = { value: 1 }, action) => {
         switch (action.type) {
           case 'doStuff':
             return {
@@ -87,7 +88,7 @@ describe('assignReducers()', () => {
             return state;
         }
       };
-      const reducers = {
+      reducers = {
         test: (state = { foo: 'bar' }, action) => {
           switch (action.type) {
             case 'doChildStuff':
