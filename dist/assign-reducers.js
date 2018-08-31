@@ -1,4 +1,4 @@
-// https://github.com/haensl/assign-reducers#readme v1.0.4 Copyright 2018 Hans-Peter Dietz
+// https://github.com/haensl/assign-reducers#readme v1.1.0 Copyright 2018 Hans-Peter Dietz
 (function (global, factory) {
 typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 typeof define === 'function' && define.amd ? define(factory) :
