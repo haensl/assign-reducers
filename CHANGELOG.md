@@ -1,3 +1,6 @@
+## 1.2.0
+* [#12: Transpile distribution bundles.](https://github.com/haensl/assign-reducers/issues/12)
+
 ## 1.1.0
 * [#10: Bundle with rollup.](https://github.com/haensl/assign-reducers/issues/10)
 

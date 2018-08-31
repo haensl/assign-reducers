@@ -1,4 +1,4 @@
-const assignReducers = (reducer, reducers = {}) => {
+export default (reducer, reducers = {}) => {
   if (typeof reducer !== 'function') {
     throw new TypeError('Invalid parameter, expected reducer function!');
   }
@@ -31,5 +31,3 @@ const assignReducers = (reducer, reducers = {}) => {
     return state;
   };
 };
-
-export default assignReducers;
