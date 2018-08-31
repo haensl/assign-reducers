@@ -1,10 +1,10 @@
 {
   "name": "assign-reducers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "node": ">= 8.11.4"
   },
-  "description": "Assign redux reducers analogous to Object.assign.",
+  "description": "Combine redux reducers analogous to Object.assign.",
   "main": "index.js",
   "scripts": {
     "test": "jest",

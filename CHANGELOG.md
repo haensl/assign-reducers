@@ -1,3 +1,6 @@
+## 1.0.4
+* [#8: Reiterate readme.](https://github.com/haensl/assign-reducers/issues/8)
+
 ## 1.0.3
 * [#6: Fix a bug that causes the root state object not to change, when only the child state changes.](https://github.com/haensl/assign-reducers/issues/6)
 
