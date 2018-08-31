@@ -1,3 +1,10 @@
+// https://github.com/haensl/assign-reducers#readme v1.0.4 Copyright 2018 Hans-Peter Dietz
+(function (global, factory) {
+typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+typeof define === 'function' && define.amd ? define(factory) :
+(global['assign-reducers'] = factory());
+}(this, (function () { 'use strict';
+
 const assignReducers = (reducer, reducers = {}) => {
   if (typeof reducer !== 'function') {
     throw new TypeError('Invalid parameter, expected reducer function!');
@@ -32,4 +39,6 @@ const assignReducers = (reducer, reducers = {}) => {
   };
 };
 
-export default assignReducers;
+return assignReducers;
+
+})));
