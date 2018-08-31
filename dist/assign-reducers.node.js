@@ -1,3 +1,5 @@
+'use strict';
+
 const assignReducers = (reducer, reducers = {}) => {
   if (typeof reducer !== 'function') {
     throw new TypeError('Invalid parameter, expected reducer function!');
@@ -32,4 +34,4 @@ const assignReducers = (reducer, reducers = {}) => {
   };
 };
 
-export default assignReducers;
+module.exports = assignReducers;

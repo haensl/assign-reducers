@@ -1,3 +1,6 @@
+## 1.1.0
+* [#10: Bundle with rollup.](https://github.com/haensl/assign-reducers/issues/10)
+
 ## 1.0.4
 * [#8: Reiterate readme.](https://github.com/haensl/assign-reducers/issues/8)
 
