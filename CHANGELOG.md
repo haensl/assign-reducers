@@ -1,3 +1,7 @@
+## 1.3.0
+* [#14: Integrate CI.](https://github.com/haensl/assign-reducers/issues/14)
+* Update dependencies.
+
 ## 1.2.0
 * [#12: Transpile distribution bundles.](https://github.com/haensl/assign-reducers/issues/12)
 
