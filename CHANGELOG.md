@@ -1,3 +1,6 @@
+## 1.3.1
+* [#16: Update dependencies.](https://github.com/haensl/assign-reducers/issues/16)
+
 ## 1.3.0
 * [#14: Integrate CI.](https://github.com/haensl/assign-reducers/issues/14)
 * Update dependencies.
