@@ -67,9 +67,9 @@ commands:
         default: test-app
     steps:
       - run:
-          working-directory: /tmp
           name: create npm application
           command: |
+            cd /tmp
             mkdir << parameters.project_name >>
             cd << parameters.project_name >> && npm init -y
 
@@ -81,9 +81,9 @@ commands:
         default: test-app
     steps:
       - run:
-          working-directory: /tmp
           name: create react applicatiion
           command: |
+            cd /tmp
             npx --quiet create-react-app << parameters.project_name >> --use-npm
 
   package-information:
