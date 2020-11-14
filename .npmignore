@@ -1,5 +1,6 @@
 *.md
 __tests__/
+__package-tests__/
 .*
 jest.config.js
 rollup.*

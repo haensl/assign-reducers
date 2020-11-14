@@ -4,7 +4,7 @@ Combine [Redux](https://redux.js.org) reducer functions much like [Object.assign
 
 [![NPM](https://nodei.co/npm/assign-reducers.png?downloads=true)](https://nodei.co/npm/assign-reducers/)
 
-[![Build Status](https://travis-ci.org/haensl/assign-reducers.svg?branch=master)](https://travis-ci.org/haensl/assign-reducers)
+[![CircleCI](https://circleci.com/gh/haensl/assign-reducers.svg?style=svg)](https://circleci.com/gh/haensl/assign-reducers)
 
 ## Installation
 
