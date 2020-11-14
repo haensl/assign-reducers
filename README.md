@@ -20,6 +20,42 @@ Via yarn
 yarn add assign-reducers
 ```
 
+## Usage
+
+ESM
+
+```javascript
+import assignReducers from 'assign-reducers';
+import { createStore } from 'redux';
+
+// ...
+
+const rootReducer = assignReducers(someReducer, {
+  subTree: someOtherReducer
+});
+const store = createStore(
+  rootReducer,
+  initialState
+);
+```
+
+CommonJS
+
+```javascript
+const assignReducers = require('assign-reducers');
+const { createStore } = require('redux');
+// ...
+
+const rootReducer = assignReducers(someReducer, {
+  subTree: someOtherReducer
+});
+
+const store = createStore(
+  rootReducer,
+  initialState
+);
+```
+
 ## Example
 
 ```javascript
