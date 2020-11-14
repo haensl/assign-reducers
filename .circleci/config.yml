@@ -194,6 +194,7 @@ jobs:
           root: ./
           paths:
             - dist
+            - __package-tests__
             - CHANGELOG.md
             - README.md
             - LICENSE
