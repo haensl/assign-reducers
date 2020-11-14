@@ -89,7 +89,7 @@ export default [
     ],
     input: 'index',
     output: {
-      exports: 'named',
+      exports: 'default',
       file: pkg.main,
       format: 'cjs',
       indent: false,
@@ -97,28 +97,6 @@ export default [
       sourcemap: true
     },
     plugins: [
-      babel({
-        babelHelpers: 'runtime',
-        babelrc: false,
-        exclude: [
-          'node_modules/**',
-          '**/*.test.js'
-        ],
-        plugins: [
-          '@babel/plugin-transform-runtime',
-          'add-module-exports'
-        ],
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: {
-                node: true
-              }
-            }
-          ]
-        ]
-      }),
       node(),
       terser({
         output: {

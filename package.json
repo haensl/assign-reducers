@@ -86,7 +86,6 @@
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "babel-jest": "^26.6.3",
-    "babel-plugin-add-module-exports": "^1.0.4",
     "eslint": "^7.13.0",
     "husky": "^4.3.0",
     "jest": "^26.6.3",
