@@ -1,3 +1,7 @@
+## 1.4.0
+* [#19: Migrate to CircleCI.](https://github.com/haensl/assign-reducers/issues/19)
+* [#18: Update dependencies.](https://github.com/haensl/assign-reducers/issues/18)
+
 ## 1.3.1
 * [#16: Update dependencies.](https://github.com/haensl/assign-reducers/issues/16)
 
