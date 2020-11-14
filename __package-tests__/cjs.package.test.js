@@ -1,8 +1,7 @@
 const { createStore } = require('redux');
 const assignReducers = require('assign-reducers');
-const { name, version } = require('../package');
 
-describe(`${name}@${version} esm package test`, () => {
+describe('assign-reducers esm package test', () => {
   const reducerA = (state = {}) => state;
   const reducerB = (state = {}) => state;
 

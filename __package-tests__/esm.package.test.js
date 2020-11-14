@@ -1,8 +1,7 @@
 import { createStore } from 'redux';
 import assignReducers from 'assign-reducers';
-import { name, version } from '../package';
 
-describe(`${name}@${version} esm package test`, () => {
+describe('assign-reducers esm package test', () => {
   const reducerA = (state = {}) => state;
   const reducerB = (state = {}) => state;
 
