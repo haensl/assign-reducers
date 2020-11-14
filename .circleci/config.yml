@@ -74,7 +74,7 @@ commands:
             cd << parameters.project_name >> && npm init -y
 
   create-react-app:
-    parameter:
+    parameters:
       project_name:
         description: project name
         type: string
