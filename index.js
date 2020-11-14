@@ -25,7 +25,10 @@ export default (reducer, reducers = {}) => {
       }, {});
 
     if (hasChanged) {
-      return Object.assign({}, rootState, childState);
+      return {
+        ...rootState,
+        ...childState
+      };
     }
 
     return state;
