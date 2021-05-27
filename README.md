@@ -2,7 +2,7 @@
 
 Combine [Redux](https://redux.js.org) reducer functions much like [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
 
-[![NPM](https://nodei.co/npm/assign-reducers.png?downloads=true)](https://nodei.co/npm/assign-reducers/)
+[![NPM](https://nodei.co/npm/assign-reducers.png?downloads=true)](https://nodei.co/npm/@haensl%2Fassign-reducers/)
 
 [![CircleCI](https://circleci.com/gh/haensl/assign-reducers.svg?style=svg)](https://circleci.com/gh/haensl/assign-reducers)
 
@@ -11,13 +11,13 @@ Combine [Redux](https://redux.js.org) reducer functions much like [Object.assign
 Via npm
 
 ```
-npm i --save assign-reducers
+npm i --save @haensl/assign-reducers
 ```
 
 Via yarn
 
 ```
-yarn add assign-reducers
+yarn add @haensl/assign-reducers
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ yarn add assign-reducers
 ESM
 
 ```javascript
-import assignReducers from 'assign-reducers';
+import assignReducers from '@haensl/assign-reducers';
 import { createStore } from 'redux';
 
 // ...
@@ -42,7 +42,7 @@ const store = createStore(
 CommonJS
 
 ```javascript
-const assignReducers = require('assign-reducers');
+const assignReducers = require('@haensl/assign-reducers');
 const { createStore } = require('redux');
 // ...
 
@@ -59,7 +59,7 @@ const store = createStore(
 ## Example
 
 ```javascript
-import assignReducers from 'assign-reducers';
+import assignReducers from '@haensl/assign-reducers';
 import actions from './actions';
 import anotherReducer from 'somewhere/else/in/my/project/reducer';
 

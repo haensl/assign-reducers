@@ -1,3 +1,6 @@
+## 1.5.1
+* Update readme.
+
 ## 1.5.0
 * [#33: Move package.](https://github.com/haensl/assign-reducers/issues/33)
 * Update dependencies.
