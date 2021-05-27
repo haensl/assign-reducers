@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import assignReducers from 'assign-reducers';
+import assignReducers from '@haensl/assign-reducers';
 
 describe('assign-reducers esm package test', () => {
   const reducerA = (state = {}) => state;
