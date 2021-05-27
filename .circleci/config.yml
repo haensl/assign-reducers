@@ -28,7 +28,7 @@ commands:
           name: extract latest published version
           working_directory: ~/assign-reducers
           command: |
-            LIVE_VERSION=$(npm show assign-reducers version || true)
+            LIVE_VERSION=$(npm show @haensl/assign-reducers version || true)
             [ -z "${LIVE_VERSION}" ] && LIVE_VERSION='0.0.0'
             echo "export LIVE_VERSION=${LIVE_VERSION}" >> ${BASH_ENV}
             echo "latest published version: ${LIVE_VERSION}"
@@ -94,8 +94,8 @@ commands:
       - run:
           name: gather bundle information
           command: |
-            npm info assign-reducers@${VERSION} > ./bundle.info
-            tree -s node_modules/assign-reducers >> ./bundle.info
+            npm info @haensl/assign-reducers@${VERSION} > ./bundle.info
+            tree -s node_modules/@haensl/assign-reducers >> ./bundle.info
       - store_artifacts:
           path: bundle.info
 
@@ -187,9 +187,9 @@ jobs:
             NODE_ENV: 'production'
           command: |
             npm pack
-            mv assign-reducers-${VERSION}.tgz assign-reducers.tgz
+            mv haensl-assign-reducers-${VERSION}.tgz haensl-assign-reducers.tgz
       - store_artifacts:
-          path: assign-reducers.tgz
+          path: haensl-assign-reducers.tgz
       - persist_to_workspace:
           root: ./
           paths:
@@ -202,7 +202,7 @@ jobs:
             - package-lock.json
             - index.js
             - .npmignore
-            - assign-reducers.tgz
+            - haensl-assign-reducers.tgz
 
   bundle-test-cjs-js:
     docker:
@@ -222,7 +222,7 @@ jobs:
           name: install module
           working_directory: /tmp/test-app
           command: |
-            npm i ~/assign-reducers/assign-reducers.tgz
+            npm i ~/assign-reducers/haensl-assign-reducers.tgz
       - run:
           name: install dependencies
           working_directory: /tmp/test-app
@@ -257,7 +257,7 @@ jobs:
           name: install module
           working_directory: /tmp/test-app
           command: |
-            npm i -S ~/assign-reducers/assign-reducers.tgz
+            npm i -S ~/assign-reducers/haensl-assign-reducers.tgz
       - run:
           name: test esm.js module
           working_directory: /tmp/test-app
@@ -322,7 +322,7 @@ jobs:
           name: install module
           working_directory: /tmp/test-app
           command: |
-            npm i -S assign-reducers
+            npm i -S @haensl/assign-reducers
       - run:
           name: install dependencies
           working_directory: /tmp/test-app
@@ -358,7 +358,7 @@ jobs:
           name: install module
           working_directory: /tmp/test-app
           command: |
-            npm i assign-reducers
+            npm i @haensl/assign-reducers
       - run:
           name: install dependencies
           working_directory: /tmp/test-app
@@ -381,8 +381,8 @@ jobs:
           name: publish github release
           working_directory: ~/assign-reducers
           command: |
-            cp ./assign-reducers.tgz ./assign-reducers-${VERSION}.tgz
+            cp ./haensl-assign-reducers.tgz ./haensl-assign-reducers-${VERSION}.tgz
             CHANGES=$(awk "/## ${VERSION}/,/^$/" CHANGELOG.md)
             echo "Publishing release v${VERSION} to Github.\nChanges:"
             echo $CHANGES
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete -n "v${VERSION}" -b "${CHANGES}" "v${VERSION}" ./assign-reducers-${VERSION}.tgz
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete -n "v${VERSION}" -b "${CHANGES}" "v${VERSION}" ./haensl-assign-reducers-${VERSION}.tgz
