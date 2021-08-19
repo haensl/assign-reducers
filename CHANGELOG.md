@@ -1,3 +1,6 @@
+## 1.5.2
+* [#36: Update dependencies.](https://github.com/haensl/assign-reducers/issues/36)
+
 ## 1.5.1
 * Update readme.
 
