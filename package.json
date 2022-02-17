@@ -14,6 +14,7 @@
     "clean": "rimraf ./dist",
     "lint": "eslint --ext .js ./",
     "lint:ci": "eslint --format junit -o test-results/eslint/results.xml --ext .js ./",
+    "prepare": "if [ ${NODE_ENV} != 'production' ]; then husky install; fi",
     "tdd": "jest --watch",
     "test": "jest",
     "test:ci": "jest --runInBand --no-cache --reporters='default' --reporters='jest-junit'"
