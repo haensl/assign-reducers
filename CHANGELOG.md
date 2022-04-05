@@ -1,3 +1,6 @@
+## 1.5.6
+* [#44: Update dependencies.](https://github.com/haensl/assign-reducers/issues/44)
+
 ## 1.5.5
 * [#42: Add funding information.](https://github.com/haensl/assign-reducers/issues/42)
 * Update depenencies.
